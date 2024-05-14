@@ -4,6 +4,7 @@ Shader "Custom/Metallic"
     {
         _Color("Color", Color) = (1,1,1,1)
         _MetalTex("Metal" , 2D) = "white"{}
+        _MainTex("", 2D) = "white" {}
         _Metallic("Metallic", Range(0.0,1.0))=0.0
         _MyBump("Bump Texture", 2D) = "bump"{}
     }
@@ -16,10 +17,11 @@ Shader "Custom/Metallic"
 
         #pragma surface surf StandardSpecular
          sampler2D _MyBump;
-        
+         sampler2D _MainTex;
 
         struct Input
         {
+            float2 uv_MainTex;
             float2 uv_MetalTex;
             float2 uv_MyBump;
            
@@ -32,7 +34,7 @@ Shader "Custom/Metallic"
 
         void surf(Input IN, inout SurfaceOutputStandardSpecular o)
         {
-            o.Albedo = _Color.rgb;
+            o.Albedo = tex2D(_MainTex, IN.uv_MainTex) * _Color;
             o.Smoothness = tex2D(_MetalTex, IN.uv_MetalTex).r;
             o.Specular = _Metallic;
             o.Normal = UnpackNormal(tex2D(_MyBump, IN.uv_MyBump));

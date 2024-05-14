@@ -11,6 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Puzzle1.unity
     guid: 2241ad0f0db22ef44b7becafefe848d0
+  - enabled: 1
+    path: Assets/Scenes/Puzzle2.unity
+    guid: 5dcf390ab032fc3418962c318d07bf6c
+  - enabled: 1
+    path: Assets/Scenes/Trophy.unity
+    guid: 1654b040332cb6a41a12bcb1923e445d
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 5b89b76ef6ffdb143b6e7a723e6ef0a3, type: 2}
     com.unity.xr.openxr.settings4: {fileID: 11400000, guid: aa1f3c85fa6e52341a47318fc94bddd9, type: 2}

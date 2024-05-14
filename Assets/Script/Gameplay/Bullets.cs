@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Bullets : MonoBehaviour
 {
@@ -24,7 +25,7 @@ public class Bullets : MonoBehaviour
             Debug.Log("Colisión con Fantasma");
             Destroy(other.gameObject);
             Destroy(gameObject);
-            GameManager.instance.enemiesDefeated++;
+            SceneManager.LoadScene("Puzzle2");
         } 
     }
 }
