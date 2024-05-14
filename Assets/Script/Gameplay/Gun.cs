@@ -15,12 +15,12 @@ public class Gun : MonoBehaviour
     void Start() {
         XRGrabInteractable _interactor = GetComponent<XRGrabInteractable>();
         _interactor.activated.AddListener(FireGun);
-
     }
 
     private void FireGun(ActivateEventArgs arg) {
         GameObject tempBullet = Instantiate(bullet, spawner.position, Quaternion.identity);
-        tempBullet.GetComponent<Rigidbody>().velocity = spawner.forward * bulletSpeed;
+        tempBullet.transform.rotation = spawner.rotation;
+        tempBullet.GetComponent<Rigidbody>().velocity = spawner.up * bulletSpeed;
         Destroy(tempBullet, 6);
     }
 }

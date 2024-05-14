@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 
 public class UIMenuManager : MonoBehaviour
 {
+    [SerializeField] string sceneName;
     public void StartGame() 
     {
-        try { SceneManager.LoadScene("SampleScene"); }
+        try { SceneManager.LoadScene(sceneName); }
         catch (Exception e) { Debug.LogError("Problem Scene" + e.Message); }
     }
 
