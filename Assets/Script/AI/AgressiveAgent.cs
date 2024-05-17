@@ -9,8 +9,8 @@ public class AgressiveAgent : BasicAgent {
 
     [SerializeField] float eyesPerceptRadious, earsPerceptRadious;
     [SerializeField] Transform eyesPercept, earsPercept;
-    [SerializeField] Animator animator;
     [SerializeField] AgressiveAgentStates agentState;
+    Animator animator;
     Rigidbody rb;
     Collider[] perceibed, perceibed2;
     string currentAnimationStateName;
